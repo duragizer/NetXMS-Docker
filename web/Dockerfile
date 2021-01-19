@@ -10,7 +10,7 @@ COPY /docker-entrypoint.sh /
 
 RUN curl -L https://www.netxms.org/download/releases/${MAJOR}.${MINOR}/${VERSION}/nxmc-${VERSION}.war -o /var/lib/jetty/webapps/nxmc.war && \
 	curl -L https://www.netxms.org/download/releases/${MAJOR}.${MINOR}/${VERSION}/netxms-websvc-${VERSION}.war -o /var/lib/jetty/webapps/webapi.war && \
-    chmod 755 docker-entrypoint.sh
+    chmod +x /docker-entrypoint.sh
 
 CMD java -jar /usr/local/jetty/start.jar
 
