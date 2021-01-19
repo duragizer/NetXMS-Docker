@@ -8,8 +8,8 @@ ENV WEBAPI_PORT=4701 WEBAPI_USEENCRYPTION=true
 
 COPY ./docker-entrypoint.sh /
 
-RUN curl -L https://www.netxms.org/download/releases/${MAJOR}.${MINOR}/${VERSION}/nxmc-${VERSION}.war -o /var/lib/jetty/webapps/nxmc.war && \
-	curl -L https://www.netxms.org/download/releases/${MAJOR}.${MINOR}/${VERSION}/netxms-websvc-${VERSION}.war -o /var/lib/jetty/webapps/webapi.war && \
+RUN curl -L https://www.netxms.org/download/releases/${MAJOR}.${MINOR}/${VERSION}/nxmc-${VERSION}.war -o /var/lib/jetty/webapps/nxmc.war
+RUN	curl -L https://www.netxms.org/download/releases/${MAJOR}.${MINOR}/${VERSION}/netxms-websvc-${VERSION}.war -o /var/lib/jetty/webapps/webapi.war
 
 RUN chmod +x /docker-entrypoint.sh
 
